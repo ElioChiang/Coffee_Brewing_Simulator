@@ -1,6 +1,5 @@
 import streamlit as st
-import matplotlib.pyplot as plt
-import numpy as np
+
 
 st.title("☕ 咖啡沖煮參數模擬器")
 st.markdown("模擬不同參數與處理法下，可能產生的風味與建議調整方向")
