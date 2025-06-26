@@ -2,7 +2,9 @@ import streamlit as st
 
 
 st.title("☕ 咖啡沖煮參數模擬器")
-st.markdown("模擬不同參數與處理法下，可能產生的風味與建議調整方向")
+st.markdown("模擬不同參數與處理法，風味的變化與建議調整方向")
+st.markdown("左上角箭頭可拉開調整參數")
+
 
 # 模式切換
 mode = st.sidebar.radio("請選擇模式", ["普通模式", "專業模式 | 悶蒸、斷水"])
