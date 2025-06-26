@@ -5,7 +5,7 @@ st.title("☕ 咖啡沖煮參數模擬器")
 st.markdown("模擬不同參數與處理法下，可能產生的風味與建議調整方向")
 
 # 模式切換
-mode = st.sidebar.radio("請選擇模式", ["普通模式", "專業模式"])
+mode = st.sidebar.radio("請選擇模式", ["普通模式", "專業模式 | 悶蒸、斷水"])
 
 st.sidebar.header("請輸入沖煮參數")
 
@@ -18,7 +18,7 @@ process_method = st.sidebar.selectbox("處理法", ["水洗", "日曬", "蜜處�
 # 專業模式獨有參數
 blooming_time = 0
 pour_count = 0
-if mode == "專業模式":
+if mode == "專業模式 | 悶蒸、斷水":
     blooming_time = st.sidebar.slider("悶蒸時間（秒）", 0, 60, 30, 5)
     pour_count = st.sidebar.slider("斷水次數", 0, 5, 2, 1)
 
@@ -71,7 +71,7 @@ def calculate_flavor_profile(ratio, time, temperature, grind_size, process_metho
 
 
     # 專業模式參數影響
-    if mode == "專業模式":
+    if mode == "專業模式 | 悶蒸、斷水":
         if blooming_time < 20: # 悶蒸時間不足
             acid += 1
             body -= 1
