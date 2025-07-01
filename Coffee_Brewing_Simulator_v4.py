@@ -4,8 +4,9 @@ import streamlit as st
 # Set page configuration for wider layout
 st.set_page_config(layout="wide")
 
-st.title("☕ 咖啡沖煮參數模擬器")
-st.markdown("探索不同沖煮參數、處理法與烘焙度對咖啡風味的影響，並獲取專業調整建議。")
+st.title("☕ 手沖咖啡參數模擬器")
+st.markdown("探索不同沖煮參數、處理法與烘焙度對咖啡風味的影響。")
+st.markdown("此模擬器僅供參考，實務上會因水質、濾杯、磨豆機不同而有所影響。")
 st.markdown("👈 左側欄位可調整沖煮參數。")
 
 # --- Default Parameters Configuration ---
@@ -208,7 +209,7 @@ def calculate_flavor_profile(ratio, time, temperature, grind_size, process_metho
         body -= 0.5
         bitter -= 0.5
 
-    # Professional Mode Parameter Impact (現在這部分將始終被考慮)
+    # Professional Mode Parameter Impact
     if blooming_time < 20 and blooming_time > 0:
         acid += 1
         body -= 1
@@ -368,7 +369,7 @@ def adjustment_tips(ratio, time, temperature, grind_size, blooming_time, bloomin
     elif temperature < 88:
         tips.append("🌡️ **水溫偏低**：若風味清淡、酸感突出，建議將水溫**提升至 90°C 以上**，以充分萃取咖啡的甜感與香氣。")
 
-    # 專業模式參數的建議（現在將始終被考慮）
+    # 專業模式參數的建議
     if blooming_time < 20 and blooming_time > 0:
         tips.append("💧 **悶蒸時間不足**：建議**延長悶蒸時間至 30-40 秒**，充足的悶蒸有助於咖啡粉均勻吸水，提升整體萃取品質與甜感。")
     elif blooming_time > 40:
@@ -391,9 +392,9 @@ def adjustment_tips(ratio, time, temperature, grind_size, blooming_time, bloomin
         tips.append("👍 **參數配置良好！** 您目前的沖煮參數看起來很平衡。若想進一步優化，可嘗試**微調研磨度**或**變化注水手法**來探索更細緻的風味。")
     return tips
 
-
+st.markdown("---")
 # --- Simulation Results Display Section ---
-st.subheader("📝 模擬結果")
+st.subheader("模擬結果")
 
 # 使用 st.session_state 來獲取所有參數
 acid, sweet, bitter, body = calculate_flavor_profile(
