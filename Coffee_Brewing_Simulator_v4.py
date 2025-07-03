@@ -6,7 +6,7 @@ st.set_page_config(layout="wide")
 
 st.title("☕ 手沖咖啡參數模擬器")
 st.markdown("探索不同沖煮參數、處理法與烘焙度對咖啡風味的影響。")
-st.markdown("此模擬器僅供參考，實務上會因水質、濾杯、磨豆機不同而有所影響。")
+st.markdown("此模擬器僅供參考，實務上會因水質、濾杯、磨豆機等等不同而有所影響。")
 st.markdown("👈 左側欄位可調整沖煮參數。")
 
 # --- Default Parameters Configuration ---
